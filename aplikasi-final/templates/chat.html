@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block title %}WargaBot · Asisten Kampung{% endblock %}
+{% block color %}{{ theme.color }}{% endblock %}
+
+{% block header_extra %}
+<div class="header-actions">
+  <a class="btn-ghost" href="{{ url_for('admin_page', theme_id=theme.id) }}"><span aria-hidden="true">▤</span> Statistik</a>
+  <button id="btn-clear" class="btn-ghost" type="button"><span aria-hidden="true">↻</span> Hapus riwayat</button>
+</div>
+{% endblock %}
+
+{% block content %}
+<section class="chat-layout">
+  <aside class="welcome-panel">
+    <div class="eyebrow"><span class="eyebrow-dot"></span> ASISTEN INFORMASI KAMPUNG</div>
+    <h1>Urusan warga,<br><span>lebih mudah.</span></h1>
+    <p class="welcome-copy">Cari informasi kampung dengan cepat. WargaBot siap membantu, kapan pun kamu perlu.</p>
+    <div class="welcome-illustration" aria-hidden="true">
+      <div class="sun-orb"></div><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+      <div class="house-icon">🏡</div><span class="float-leaf leaf-one">✳</span><span class="float-leaf leaf-two">✦</span>
+      <div class="illustration-caption">
+        <span class="caption-icon">✓</span> Informasi dari data pengurus
+      </div>
+    </div>
+    <div class="topic-heading">BISA BANTU SOAL</div>
+    <div class="topic-list">
+      <span>♧ Kebersihan</span><span>⌂ Administrasi</span><span>◉ Keamanan</span><span>✳ Kegiatan warga</span>
+    </div>
+    <p class="welcome-note">Untuk informasi yang belum tersedia, WargaBot akan mengarahkanmu ke pengurus RT.</p>
+  </aside>
+
+  <section class="chat-card" aria-label="Percakapan dengan WargaBot">
+    <div class="chat-header">
+      <div class="avatar-wrap"><div class="avatar">{{ theme.avatar }}</div><span class="online-dot" aria-label="Siap membantu"></span></div>
+      <div class="chat-title">
+        <h2>{{ theme.bot_name }}</h2>
+        <p>{{ theme.name }}</p>
+        {% if theme.terakhir_diperbarui %}
+        <p class="data-status">{% if '[ISI' in theme.terakhir_diperbarui %}Data menunggu pengurus{% elif 'fiktif' in theme.terakhir_diperbarui|lower %}Mode contoh tugas kuliah{% else %}Data diperbarui {{ theme.terakhir_diperbarui }}{% endif %}</p>
+        {% endif %}
+      </div>
+      <label class="learn-toggle"><input type="checkbox" id="learn-mode"><span>Mode belajar</span></label>
+    </div>
+
+    <div id="messages" class="messages" aria-live="polite" aria-label="Pesan percakapan"></div>
+
+    <div class="quick-ask">
+      <div class="quick-label"><span>Pertanyaan cepat</span><span class="quick-sparkle">✦</span></div>
+      <div class="suggestions">
+        {% for s in theme.suggestions %}
+        <button type="button" class="chip">{{ s }}</button>
+        {% endfor %}
+      </div>
+    </div>
+
+    <form id="chat-form" class="chat-form" autocomplete="off">
+      <label class="sr-only" for="chat-input">Tulis pertanyaan</label>
+      <input id="chat-input" type="text" placeholder="Tulis pertanyaanmu di sini..." maxlength="500" required>
+      <button type="submit" aria-label="Kirim pesan"><span class="send-label">Kirim</span><span class="send-arrow" aria-hidden="true">↗</span></button>
+    </form>
+    <div class="chat-footnote"><span class="lock-icon">⌑</span> Percakapan ini tersimpan di sesi perangkatmu</div>
+  </section>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  const THEME = {
+    id: {{ theme.id | tojson }},
+    avatar: {{ theme.avatar | tojson }},
+    greeting: {{ theme.greeting | tojson }}
+  };
+</script>
+<script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+{% endblock %}
+

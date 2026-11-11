@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}WargaBot | Informasi Kampung{% endblock %}
+{% block content %}
+<section class="hero">
+  <h1>WargaBot</h1>
+  <p>Asisten informasi kampung untuk jadwal, layanan, administrasi, kegiatan, dan kontak resmi pengurus.</p>
+  <a class="button" href="{{ url_for('chat_page', theme_id='kampung') }}">Mulai bertanya</a>
+</section>
+{% endblock %}

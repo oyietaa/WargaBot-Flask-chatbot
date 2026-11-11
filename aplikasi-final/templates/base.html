@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f6f5ef">
+  <title>{% block title %}WargaBot{% endblock %}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body style="--primary: {% block color %}#176b5b{% endblock %};">
+  <header class="topbar">
+    <a href="{{ url_for('index') }}" class="brand"><span class="brand-mark">W</span><span>Warga<span class="brand-light">Bot</span></span></a>
+    {% block header_extra %}{% endblock %}
+  </header>
+  <main class="container">{% block content %}{% endblock %}</main>
+  <footer class="footer"><span class="footer-mark">✳</span> Dibuat untuk membantu kehidupan warga kampung</footer>
+  {% block scripts %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,41 @@
+kalimat,intent
+assalamualaikum,salam
+selamat sore,salam
+ini bot apa sih,identitas
+kamu bisa bantu apa aja,identitas
+makasih ya,terima_kasih
+sampah diambil hari apa ya,jadwal_sampah
+petugas sampah kok belum datang,jadwal_sampah
+kerbak minggu ini jam berapa,kerja_bakti
+ada gotong royong bersih kampung gak,kerja_bakti
+giliran ronda saya kapan,jadwal_ronda
+kalau gak bisa ronda gimana,jadwal_ronda
+saudara nginep di rumah perlu lapor gak,lapor_tamu
+tamu menginap harus lapor ke rt,lapor_tamu
+iuran bulanan berapa,iuran
+bayar iuran lewat siapa,iuran
+jimpitan itu buat apa,iuran
+syarat bikin surat pengantar rt,surat_pengantar
+mau urus surat keterangan dari rt,surat_pengantar
+baru pindah ke sini lapor ke mana,pindah_domisili
+syarat lapor warga baru,pindah_domisili
+bulan ini ada acara apa di kampung,agenda_kegiatan
+pengajian kapan,agenda_kegiatan
+posyandu hari apa,posyandu_pkk
+jadwal timbang balita,posyandu_pkk
+ada berita lelayu hari ini,info_duka
+iuran kematian berapa,info_duka
+nomor pak rt berapa,kontak_pengurus
+cara hubungi pengurus kampung,kontak_pengurus
+lampu jalan di gang mati,lapor_masalah
+got depan rumah mampet,lapor_masalah
+mau pinjam tenda dan kursi,fasilitas
+balai warga boleh dipakai buat acara,fasilitas
+ada kebakaran di gang sebelah,darurat
+butuh ambulans cepat,darurat
+siapa presiden indonesia,fallback
+harga beras hari ini,fallback
+cuaca besok hujan gak,fallback
+cara install python,fallback
+resep soto ayam,fallback
+obat sakit gigi apa,fallback

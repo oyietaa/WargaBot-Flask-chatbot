@@ -1,0 +1,354 @@
+{
+  "id": "kampung",
+  "name": "Asisten Informasi Kampung",
+  "description": "Menjawab pertanyaan warga seputar sampah, ronda, kerja bakti, iuran, surat pengantar, dan kegiatan kampung.",
+  "bot_name": "WargaBot",
+  "avatar": "🏘️",
+  "color": "#b45309",
+  "greeting": "Halo, warga! Saya WargaBot, asisten informasi kampung. Tanyakan soal jadwal sampah, ronda, kerja bakti, iuran, surat pengantar, atau kegiatan kampung.",
+  "suggestions": [
+    "Jadwal angkut sampah",
+    "Kerja bakti kapan?",
+    "Syarat surat pengantar RT",
+    "Iuran bulanan"
+  ],
+  "terakhir_diperbarui": "5 November 2026 (contoh fiktif)",
+  "data": {
+    "jadwal_sampah": "Selasa dan Sabtu pagi (contoh fiktif)",
+    "aturan_sampah": "sampah dibungkus dan diletakkan di depan rumah sebelum pukul 07.00 (contoh fiktif)",
+    "jadwal_kerja_bakti": "Minggu pertama setiap bulan pukul 07.00, kumpul di balai warga (contoh fiktif)",
+    "jadwal_ronda": "bergilir per kelompok, mulai pukul 22.00 (contoh fiktif)",
+    "aturan_ronda": "warga yang berhalangan dapat menukar giliran dengan warga lain dan memberi tahu koordinator (contoh fiktif)",
+    "aturan_tamu": "tamu yang menginap lebih dari satu malam dilaporkan ke ketua RT (contoh fiktif)",
+    "info_iuran": "iuran kebersihan dan keamanan dibayar setiap awal bulan ke bendahara RT (contoh fiktif)",
+    "info_jimpitan": "jimpitan dikumpulkan saat ronda untuk kas kampung (contoh fiktif)",
+    "syarat_surat": "fotokopi KTP dan KK (contoh fiktif)",
+    "alur_surat": "datang ke ketua RT pada jam layanan, isi formulir, lalu surat ditandatangani (contoh fiktif)",
+    "syarat_pindah": "membawa surat pindah dan fotokopi KK, lalu lapor ke ketua RT (contoh fiktif)",
+    "agenda": "kerja bakti dan arisan bulanan (contoh fiktif)",
+    "jadwal_arisan_pengajian": "arisan setiap Minggu kedua, pengajian setiap Jumat malam (contoh fiktif)",
+    "jadwal_posyandu": "setiap tanggal 10 di balai warga (contoh fiktif)",
+    "info_pkk": "pertemuan PKK sebulan sekali, terbuka bagi ibu-ibu warga (contoh fiktif)",
+    "prosedur_duka": "pengumuman lewat grup warga dan pengeras suara masjid (contoh fiktif)",
+    "info_santunan": "ketentuan iuran dan santunan ditetapkan musyawarah warga (contoh fiktif)",
+    "kontak_pengurus": "ketua RT dan sekretaris, kontak resmi tertempel di papan pengumuman (contoh fiktif)",
+    "cara_lapor": "sampaikan ke sekretaris RT lewat grup pengurus (contoh fiktif)",
+    "info_fasilitas": "balai warga, tenda, dan kursi; ajukan ke pengurus minimal dua hari sebelumnya (contoh fiktif)",
+    "kontak_darurat_lokal": "hubungi ketua RT atau koordinator ronda (contoh fiktif)"
+  },
+  "fallback": [
+    "Maaf, saya belum memahami pertanyaan itu. Coba tanyakan tentang jadwal sampah, ronda, kerja bakti, iuran, surat pengantar, atau kegiatan kampung.",
+    "Pertanyaan itu belum ada di pengetahuan saya. Untuk hal lain, silakan hubungi pengurus RT. Saya bisa membantu soal sampah, ronda, iuran, surat, dan agenda kampung."
+  ],
+  "intents": [
+    {
+      "tag": "salam",
+      "patterns": [
+        "halo",
+        "hai",
+        "assalamualaikum",
+        "selamat pagi",
+        "selamat siang",
+        "selamat sore",
+        "selamat malam",
+        "permisi"
+      ],
+      "responses": [
+        "Halo! {nama_bot} di sini. Mau tanya soal sampah, ronda, kerja bakti, iuran, atau surat pengantar?",
+        "Selamat datang! Ada informasi kampung apa yang bisa {nama_bot} bantu?"
+      ]
+    },
+    {
+      "tag": "identitas",
+      "patterns": [
+        "kamu siapa",
+        "ini bot apa",
+        "nama kamu siapa",
+        "bisa bantu apa",
+        "kamu bisa apa",
+        "ini bot untuk apa"
+      ],
+      "responses": [
+        "Saya {nama_bot}, asisten informasi kampung. Saya menjawab pertanyaan umum warga dari data yang diisi pengurus, bukan pengganti pengurus RT.",
+        "Nama saya {nama_bot}. Saya membantu soal jadwal sampah, ronda, kerja bakti, iuran, surat pengantar, dan kegiatan kampung."
+      ]
+    },
+    {
+      "tag": "terima_kasih",
+      "patterns": [
+        "makasih",
+        "terima kasih",
+        "thanks",
+        "matur nuwun",
+        "oke makasih",
+        "siap makasih"
+      ],
+      "responses": [
+        "Sama-sama! Kalau ada informasi kampung lain, tanya saja ke {nama_bot}.",
+        "Senang bisa membantu, warga. {nama_bot} siap kalau ada pertanyaan berikutnya."
+      ]
+    },
+    {
+      "tag": "jadwal_sampah",
+      "patterns": [
+        "jadwal angkut sampah",
+        "sampah diambil hari apa",
+        "kapan sampah diambil",
+        "petugas sampah datang kapan",
+        "jadwal buang sampah",
+        "sampah belum diambil"
+      ],
+      "responses": [
+        "Jadwal pengangkutan sampah: {jadwal_sampah}. Data terakhir diperbarui: {terakhir_diperbarui}.",
+        "Soal sampah: {jadwal_sampah}. Aturannya: {aturan_sampah}."
+      ]
+    },
+    {
+      "tag": "kerja_bakti",
+      "patterns": [
+        "kerja bakti kapan",
+        "jadwal kerja bakti",
+        "bersih bersih kampung kapan",
+        "gotong royong kapan",
+        "kerbak jam berapa",
+        "wajib ikut kerja bakti"
+      ],
+      "responses": [
+        "Kerja bakti kampung: {jadwal_kerja_bakti}. Data terakhir diperbarui: {terakhir_diperbarui}.",
+        "Jadwal kerja bakti: {jadwal_kerja_bakti}. Kalau berhalangan hadir, sampaikan ke pengurus RT."
+      ]
+    },
+    {
+      "tag": "jadwal_ronda",
+      "patterns": [
+        "jadwal ronda",
+        "giliran ronda kapan",
+        "cara ikut ronda",
+        "ronda jam berapa",
+        "aturan ronda",
+        "tidak bisa ronda bagaimana",
+        "ronda malam ini siapa"
+      ],
+      "responses": [
+        "Jadwal ronda: {jadwal_ronda}. Data terakhir diperbarui: {terakhir_diperbarui}.",
+        "Soal ronda: {aturan_ronda}. Untuk giliran pribadi, tanyakan ke koordinator ronda."
+      ]
+    },
+    {
+      "tag": "lapor_tamu",
+      "patterns": [
+        "tamu menginap lapor",
+        "saudara menginap perlu lapor",
+        "lapor tamu ke rt",
+        "tamu nginap harus lapor",
+        "aturan tamu menginap",
+        "lapor kedatangan tamu"
+      ],
+      "responses": [
+        "Aturan tamu menginap di kampung ini: {aturan_tamu}.",
+        "Banyak kampung meminta tamu yang menginap dilaporkan ke pengurus. Ketentuan di sini: {aturan_tamu}."
+      ]
+    },
+    {
+      "tag": "iuran",
+      "patterns": [
+        "iuran bulanan berapa",
+        "bayar iuran ke siapa",
+        "iuran kampung",
+        "iuran sampah dan keamanan",
+        "cara bayar iuran",
+        "jimpitan untuk apa"
+      ],
+      "responses": [
+        "Informasi iuran: {info_iuran}. Data terakhir diperbarui: {terakhir_diperbarui}.",
+        "Soal iuran: {info_iuran}. Tentang jimpitan: {info_jimpitan}."
+      ]
+    },
+    {
+      "tag": "surat_pengantar",
+      "patterns": [
+        "syarat surat pengantar rt",
+        "cara minta surat pengantar",
+        "bikin surat pengantar",
+        "surat keterangan rt",
+        "urus surat pengantar",
+        "surat pengantar ktp",
+        "minta surat untuk keperluan"
+      ],
+      "responses": [
+        "Syarat surat pengantar RT: {syarat_surat}. Langkahnya: {alur_surat}.",
+        "Untuk mengurus surat pengantar, siapkan: {syarat_surat}. Alurnya: {alur_surat}."
+      ]
+    },
+    {
+      "tag": "pindah_domisili",
+      "patterns": [
+        "pindah ke kampung ini urus apa",
+        "lapor warga baru",
+        "syarat pindah domisili",
+        "warga pindahan lapor ke mana",
+        "pindah rumah lapor rt",
+        "lapor pindah"
+      ],
+      "responses": [
+        "Untuk warga baru atau yang pindah: {syarat_pindah}.",
+        "Kalau baru pindah ke kampung ini, silakan lapor ke pengurus RT. Ketentuannya: {syarat_pindah}."
+      ]
+    },
+    {
+      "tag": "agenda_kegiatan",
+      "patterns": [
+        "ada acara apa bulan ini",
+        "agenda kampung",
+        "kegiatan kampung",
+        "jadwal acara",
+        "arisan kapan",
+        "pengajian kapan"
+      ],
+      "responses": [
+        "Agenda kampung: {agenda}. Data terakhir diperbarui: {terakhir_diperbarui}.",
+        "Kegiatan rutin: {jadwal_arisan_pengajian}. Agenda terbaru: {agenda}."
+      ]
+    },
+    {
+      "tag": "posyandu_pkk",
+      "patterns": [
+        "posyandu kapan",
+        "jadwal posyandu",
+        "kegiatan pkk",
+        "arisan pkk",
+        "timbang balita",
+        "imunisasi balita di posyandu"
+      ],
+      "responses": [
+        "Jadwal posyandu: {jadwal_posyandu}. Data terakhir diperbarui: {terakhir_diperbarui}.",
+        "Soal PKK: {info_pkk}. Untuk posyandu: {jadwal_posyandu}."
+      ]
+    },
+    {
+      "tag": "info_duka",
+      "patterns": [
+        "ada berita duka",
+        "info lelayu",
+        "ada warga meninggal",
+        "iuran kematian",
+        "santunan kematian",
+        "prosedur warga meninggal"
+      ],
+      "responses": [
+        "Berita duka biasanya disampaikan pengurus lewat pengumuman kampung. Caranya di sini: {prosedur_duka}.",
+        "Soal iuran atau santunan kematian: {info_santunan}. Untuk keperluan mendadak, hubungi pengurus."
+      ]
+    },
+    {
+      "tag": "kontak_pengurus",
+      "patterns": [
+        "nomor ketua rt",
+        "kontak pengurus",
+        "hubungi pak rt",
+        "siapa ketua rt",
+        "nomor pengurus rt",
+        "cara hubungi pengurus"
+      ],
+      "responses": [
+        "Kontak pengurus yang resmi: {kontak_pengurus}.",
+        "Untuk menghubungi pengurus kampung: {kontak_pengurus}."
+      ]
+    },
+    {
+      "tag": "lapor_masalah",
+      "patterns": [
+        "lampu jalan mati",
+        "saluran air tersumbat",
+        "jalan berlubang",
+        "lapor masalah lingkungan",
+        "cara melapor ke rt",
+        "got mampet"
+      ],
+      "responses": [
+        "Untuk melaporkan masalah lingkungan: {cara_lapor}. Sertakan lokasi dan keterangan singkat.",
+        "Terima kasih sudah peduli. Silakan lapor lewat: {cara_lapor}."
+      ]
+    },
+    {
+      "tag": "fasilitas",
+      "patterns": [
+        "pinjam balai warga",
+        "sewa tenda kursi",
+        "pinjam kursi dan tenda",
+        "cara pakai balai warga",
+        "pinjam fasilitas kampung",
+        "lapangan kampung boleh dipakai",
+        "pakai balai warga untuk rapat"
+      ],
+      "responses": [
+        "Fasilitas kampung yang bisa dipinjam: {info_fasilitas}.",
+        "Untuk meminjam fasilitas, ketentuannya: {info_fasilitas}. Ajukan dulu ke pengurus."
+      ]
+    },
+    {
+      "tag": "darurat",
+      "patterns": [
+        "ada kebakaran",
+        "butuh ambulans",
+        "nomor darurat",
+        "ada kemalingan",
+        "kecelakaan di kampung",
+        "tolong darurat"
+      ],
+      "responses": [
+        "Dalam keadaan darurat, segera hubungi layanan darurat 112, lalu beri tahu pengurus RT.",
+        "Utamakan keselamatan dan hubungi 112. Kontak darurat lokal: {kontak_darurat_lokal}."
+      ]
+    }
+  ],
+  "normalisasi": {
+    "gmn": "bagaimana",
+    "gimana": "bagaimana",
+    "brp": "berapa",
+    "dmn": "dimana",
+    "kpn": "kapan",
+    "gak": "tidak",
+    "ga": "tidak",
+    "nggak": "tidak",
+    "tdk": "tidak",
+    "udah": "sudah",
+    "aja": "saja",
+    "yg": "yang",
+    "klo": "kalau",
+    "krn": "karena",
+    "kerbak": "kerja bakti",
+    "nginep": "menginap",
+    "nginap": "menginap",
+    "piro": "berapa",
+    "opo": "apa",
+    "sesuk": "besok",
+    "ngendi": "dimana",
+    "kak": "",
+    "limbah": "sampah",
+    "siskamling": "ronda",
+    "maling": "kemalingan",
+    "hajatan": "acara",
+    "tetangga": "warga",
+    "aula": "balai"
+  },
+  "stopwords": [
+    "yang",
+    "di",
+    "apa",
+    "mau",
+    "itu",
+    "ini",
+    "ya",
+    "dong",
+    "sih",
+    "nih",
+    "banget",
+    "dengan",
+    "untuk",
+    "dari",
+    "e",
+    "pak",
+    "bu"
+  ]
+}

@@ -1,0 +1,32 @@
+kalimat,intent
+kapan truk sampah lewat,jadwal_sampah
+limbah rumah tangga diangkut kapan,jadwal_sampah
+truk sampah biasanya lewat jam berapa,jadwal_sampah
+jam berapa petugas sampah biasanya datang,jadwal_sampah
+siskamling malam ini siapa,jadwal_ronda
+ronda malam jumat siapa yang jaga,jadwal_ronda
+aturan ronda buat warga baru gimana,jadwal_ronda
+warga yang tidak ikut kerbak kena denda,kerja_bakti
+halo kapan kerja bakti,kerja_bakti
+tamu dari luar kota nginep dua malam,lapor_tamu
+bayar kas bulanan lewat siapa,iuran
+uang kas bulanan dibayar kapan,iuran
+dana iuran dipakai untuk apa saja,iuran
+minta surat buat daftar sekolah anak,surat_pengantar
+minta tolong buatkan surat untuk keperluan beasiswa,surat_pengantar
+surat pengantar buat bikin ktp baru,surat_pengantar
+warga baru harus lapor ke siapa,pindah_domisili
+ada hajatan tetangga bulan depan,agenda_kegiatan
+hajatan di kampung bulan depan ada,agenda_kegiatan
+ada acara apa minggu depan di kampung,agenda_kegiatan
+kapan posyandu balita bulan ini,posyandu_pkk
+tetangga meninggal dunia hari ini,info_duka
+tetangga sebelah meninggal tadi pagi,info_duka
+mau pakai aula untuk rapat,fasilitas
+balai warga bisa dipakai buat rapat rt,fasilitas
+tolong ada maling di gang,darurat
+ada maling masuk rumah tetangga,darurat
+kebakaran di rumah warga,darurat
+harga cabai naik terus ya,fallback
+siapa presiden amerika,fallback
+tolong carikan resep rendang,fallback
